@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#065f46"/>
+      <stop offset="100%" style="stop-color:#22c55e"/>
+    </linearGradient>
+    <linearGradient id="tree" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#bbf7d0"/>
+      <stop offset="100%" style="stop-color:#4ade80"/>
+    </linearGradient>
+  </defs>
+  <!-- Background circle -->
+  <circle cx="32" cy="32" r="32" fill="url(#bg)"/>
+  <!-- Tree trunk -->
+  <rect x="28" y="44" width="8" height="10" rx="2" fill="#a16207"/>
+  <!-- Bottom foliage layer -->
+  <polygon points="16,46 32,24 48,46" fill="url(#tree)" opacity="0.85"/>
+  <!-- Middle foliage layer -->
+  <polygon points="19,36 32,16 45,36" fill="url(#tree)" opacity="0.92"/>
+  <!-- Top foliage layer -->
+  <polygon points="22,27 32,10 42,27" fill="url(#tree)"/>
+</svg>

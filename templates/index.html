@@ -1,337 +1,414 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
-<head> 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Elsie&family=Fjalla+One&family=Source+Serif+Pro:wght@300&display=swap" rel="stylesheet">
-    <link type="text/css" rel="stylesheet" href="{{url_for('static', filename='css/Home_Style.css')}}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
-    <link rel="icon" href="{{url_for('static', filename='Fire_logo_title.jpg')}}" type="image/jpg" sizes="128x128" >
-    <title>Fire Eye</title>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VanSuraksha — AI Forest Fire Protection</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <link rel="stylesheet" href="{{url_for('static', filename='css/shared.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='css/Home_Style.css')}}">
+  <link rel="icon" href="{{url_for('static', filename='favicon.svg')}}" type="image/svg+xml">
 </head>
-
 <body>
-<section>
-<div class="Images"></div>
-<div class="Section-1">
-    <div class="image-overlay">
-    <ul class="Navigation-Bar">
-        <a class="title" href="{{url_for('View.Home')}}"><img class="logo" src="{{url_for('static', filename='logo.png')}}" height="110px" width="100px"></a>
-        <a class="topnav-left" href="{{url_for('View.Home')}}">Fire Eye</a>
-        <div class="topnav-right">
-        <li class="Nav-Link"><a  href="{{url_for('View.Home')}}"><i style="padding-right:10px;" class="fa fa-home"></i>HOME</a></li>
-        <li class="Nav-Link"><a  href="{{url_for('.Home', _anchor='section2')}}"><i style="padding-right:10px;" class="fa fa-tree"></i>ABOUT</a></li>
-        <li class="Nav-Link"><a  href="{{url_for('.Home', _anchor='section3')}}"><i style="padding-right:10px;" class="fa fa-list-ul"></i>SERVICES</a></li>
-        <li class="Nav-Link"><a  href="{{url_for('.Home', _anchor='section6')}}"><i style="padding-right:10px;" class="fa fa-leaf"></i>NEWS</a></li>
-        <li class="Nav-Link"><a  href="{{url_for('.Home', _anchor='section8')}}"><i style="padding-right:10px;" class="fa fa-phone"></i>CONTACT</a></li>
-        </div>
-    </ul>
-    <h1>OUR MOTIVE</h1>
-    <div class="slogan">
-    <h2>KEEP AN</h2>
-    <h2>EYE ON FORESTS</h2>
-    </div>
-    <div class="Quote">
-    <h3>"We believe in protecting everything that is around us because in the end Nature is all that we have and all that we will ever need"</h3>
-    </div>
-    <a href="{{url_for('.Home', _anchor='section2')}}" class="scroll-down"><i class="fa fa-angle-down fa-2x"></i></a> 
-</div>  
-</div>
-</section>
 
-<section id="section2">
-<div class="Section-2" > 
-    <div class="Aboutimgs reveal fade-left">
-    <img class="image1" src="https://www.goodfreephotos.com/albums/united-states/wyoming/yellowstone-national-park/forest-fire-yellowstone-national-park-wyoming.jpg" height="420px" width="350px">
-    <img class="image2" src="https://i.pinimg.com/originals/1f/c8/3b/1fc83baf9112734ff48e57990d3c065b.jpg" height="250px" width="320px">
-    </div> 
+<!-- ══ NAVBAR ══ -->
+<nav class="vs-navbar" id="vs-navbar">
+  <div class="nav-container">
+    <a class="nav-brand" href="{{url_for('View.Home')}}">
+      <div class="nav-logo-ring"><i class="fa fa-tree"></i></div>
+      <span class="nav-title">VanSuraksha</span>
+    </a>
+    <div class="nav-links">
+      <a class="nav-link active" href="{{url_for('View.Home')}}"><i class="fa fa-house"></i><span>Home</span></a>
+      <a class="nav-link" href="#section2"><i class="fa fa-tree"></i><span>About</span></a>
+      <a class="nav-link" href="#section3"><i class="fa fa-list-ul"></i><span>Services</span></a>
+      <a class="nav-cta" href="{{url_for('View.About')}}"><i class="fa fa-info-circle"></i> About Us</a>
+    </div>
+    <button class="nav-hamburger" id="nav-toggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-mobile" id="nav-mobile">
+    <a href="{{url_for('View.Home')}}"><i class="fa fa-house"></i> Home</a>
+    <a href="#section2"><i class="fa fa-tree"></i> About</a>
+    <a href="#section3"><i class="fa fa-list-ul"></i> Services</a>
+    <a href="{{url_for('View.About')}}"><i class="fa fa-info-circle"></i> About Us</a>
+  </div>
+</nav>
 
-    <div class="AboutTrans reveal fade-right">
-    <div class="AboutDetails">
-    <h1>ABOUT FIRE EYE</h1>
-    <img src="https://static.vecteezy.com/system/resources/previews/011/318/893/original/green-leaf-branch-watercolor-free-png.png" height="100px" width="85px">
-    <p>
-        The dry period from the end of April until the advent of the monsoon in July is "fire season" 
-        in Pakistan’s forests, which cover the Hindu Kush Himalayas in the country’s north. In these 
-        days, a tiny spark can turn into an out-of-control wildfire raging across forested regions of 
-        Punjab, Kashmir, Khyber Pakhtunkhwa, and Balochistan for days. Besides causing a number of 
-        casualties, the fires killed trees, which consume centuries-old trees, destroy precious 
-        habitats, and kill wildlife. They could also have exacerbated recent flash flooding in some 
-        regions. The destruction of medicinal plants, beehives, and the nut-bearing Chilgoza pine, 
-        in particular, affects local livelihoods to a great extent. Fire Eye is now here to keep an eye 
-        on those flames in check. It detects even trace amounts of fire gases and sounds the alarm before
-        the fire can spread. This buys firefighters valuable time so they can respond that much sooner 
-        to put out the blaze. 
+<!-- ══ HERO ══ -->
+<section class="hero" id="hero">
+  <canvas id="particles-canvas"></canvas>
+  <div class="hero-content">
+    <div class="hero-badge" data-aos="fade-down" data-aos-delay="200">
+      <i class="fa fa-satellite-dish"></i>
+      <span>AI-Powered &bull; Real-Time Detection &bull; India</span>
+    </div>
+    <h1 class="hero-title" data-aos="fade-up" data-aos-delay="400">
+      <span class="hero-title-top">Guard India's</span>
+      <span class="hero-title-accent">Vanaspati</span>
+      <span class="hero-title-sub">with Intelligent Forest Fire Surveillance</span>
+    </h1>
+    <p class="hero-desc" data-aos="fade-up" data-aos-delay="600">
+      VanSuraksha harnesses deep learning and MODIS satellite telemetry to detect forest fires in real-time — delivering instant alerts to protect over <strong>71 million hectares</strong> of India's precious ecosystems.
     </p>
+    <div class="hero-actions" data-aos="fade-up" data-aos-delay="800">
+      <a href="{{url_for('View.LiveMonitor')}}" class="btn-primary"><i class="fa fa-eye"></i> Live Monitor</a>
+      <a href="#section2" class="btn-outline"><i class="fa fa-circle-info"></i> Learn More</a>
     </div>
-    
-    <div class="AboutTable">
-    <table>
-        <tr>
-            <td><img src="https://cdn-icons-png.flaticon.com/512/6890/6890840.png" height="60px" width="60px"></td>
-            <td style="padding-left: 15px; padding-right: 25px;">Fighting through climate change </td>
-            <td><img src="https://cdn-icons-png.flaticon.com/512/5077/5077683.png" height="50px" width="50px"></td>
-            <td style="padding-left: 15px;">Preserving Nature and its Resources </td>
-        </tr>
-    </table>
+    <div class="hero-stats" data-aos="fade-up" data-aos-delay="1000">
+      <div class="hero-stat">
+        <span class="hero-stat-num">71M+</span>
+        <span class="hero-stat-label">Hectares Covered</span>
+      </div>
+      <div class="hero-stat-divider"></div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">42K+</span>
+        <span class="hero-stat-label">MODIS Alerts/Year</span>
+      </div>
+      <div class="hero-stat-divider"></div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">98%</span>
+        <span class="hero-stat-label">Detection Accuracy</span>
+      </div>
     </div>
-    <div class="AboutButton">
-        <nav>
-            <ul>
-              <li>
-                <a  href="{{url_for('View.About')}}">READ MORE
-                <span></span><span></span><span></span><span></span></a>
-              </li>
-            </ul>
-        </nav>
-    </div>
-    </div>
-</div>
+  </div>
+  <a href="#section2" class="hero-scroll-btn"><i class="fa fa-chevron-down"></i></a>
 </section>
 
-<section>
-    <div class="Section-3"> 
-        <div class="ServicesTitle reveal fade-top"  id="section3">
-            <h1>WHAT WE DO</h1>
-            <h2>SERVICES WE OFFER</h2>
-            <img src="https://static.vecteezy.com/system/resources/previews/011/318/893/original/green-leaf-branch-watercolor-free-png.png" height="100px" width="85px">
+<!-- ══ ABOUT ══ -->
+<section class="about-section" id="section2">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-images" data-aos="fade-right" data-aos-duration="900">
+        <div class="about-img-main">
+          <img src="https://www.goodfreephotos.com/albums/united-states/wyoming/yellowstone-national-park/forest-fire-yellowstone-national-park-wyoming.jpg" alt="Forest Fire">
+          <div class="about-img-badge">
+            <i class="fa fa-fire"></i>
+            <div>
+              <strong>Early Detection</strong>
+              <span>Saves lives &amp; forests</span>
+            </div>
+          </div>
         </div>
-
-        <div class="Services Service-1 reveal fade-bottom">
-            <img src="https://cdn-icons-png.flaticon.com/512/5433/5433237.png" height="253px" width="230px"> 
-            <div class="ServiceLinks">
-                <a style="text-decoration: none; color: black;" href="{{url_for('View.LiveMonitor')}}"><span class="dot"><i style="margin-left: 30%; margin-top: 14.8%;" class="fa fa-angle-right fa-2x"></i></span></a>
-            </div> 
-            <div class="ServiceDetails  Service-1">
-             <h1>Live Monitoring</h1>
-            </div>
+        <div class="about-img-float" data-aos="zoom-in" data-aos-delay="300">
+          <img src="https://i.pinimg.com/originals/1f/c8/3b/1fc83baf9112734ff48e57990d3c065b.jpg" alt="Indian Forest">
         </div>
-
-        <div class="Services Service-2 reveal fade-bottom">
-            <img src="https://cdn-icons-png.flaticon.com/512/2456/2456309.png" height="253px" width="235px">
-            <div class="ServiceLinks">
-                <a style="text-decoration: none; color: black;" href="{{url_for('View.Location')}}"><span class="dot"><i style="margin-left: 30%; margin-top: 14.8%;" class="fa fa-angle-right fa-2x"></i></span></a>
+      </div>
+      <div class="about-content" data-aos="fade-left" data-aos-duration="900">
+        <div class="section-label">About VanSuraksha</div>
+        <h2 class="section-title">Guarding India's Green <span class="text-gradient">Heritage</span></h2>
+        <p class="about-text">
+          India's forests span over <strong>71 million hectares</strong> — 21.7% of the country's total land area. Each year, devastating fires sweep through Uttarakhand, Odisha, Chhattisgarh, and Madhya Pradesh, destroying biodiversity and threatening millions of livelihoods.
+        </p>
+        <p class="about-text">
+          VanSuraksha uses deep learning and satellite data to detect fires before they spread, giving firefighters the critical time window to respond and protect these irreplaceable ecosystems.
+        </p>
+        <div class="about-features">
+          <div class="about-feature">
+            <div class="feature-icon"><i class="fa fa-satellite"></i></div>
+            <div>
+              <strong>Satellite Integration</strong>
+              <span>Real-time MODIS data fusion &amp; analysis</span>
             </div>
-            <div class="ServiceDetails  Service-2">
-                <h1>Location Tracker</h1>
+          </div>
+          <div class="about-feature">
+            <div class="feature-icon"><i class="fa fa-brain"></i></div>
+            <div>
+              <strong>Deep Learning AI</strong>
+              <span>YOLOv5 object detection + InceptionV3 classification</span>
             </div>
+          </div>
+          <div class="about-feature">
+            <div class="feature-icon"><i class="fa fa-bell"></i></div>
+            <div>
+              <strong>Instant Alerts</strong>
+              <span>Sub-second fire notification with image evidence</span>
+            </div>
+          </div>
         </div>
-
-        <div class="Services Service-3 reveal fade-bottom">
-            <img src="https://cdn-icons-png.flaticon.com/512/8028/8028212.png" height="230px" width="230px">
-            <div class="ServiceLinks">
-                <a style="text-decoration: none; color: black;" href="{{url_for('View.FireAlerts')}}"><span class="dot"><i style="margin-left: 30%; margin-top: 14.8%;" class="fa fa-angle-right fa-2x"></i></span></a>
-            </div>
-            <div class="ServiceDetails  Service-3">
-                <h1>FireAlert Reports</h1>
-            </div>
-        </div>
-
-        <div class="Services Service-4 reveal fade-bottom">
-            <div class="ServiceLinks">
-                <a style="text-decoration: none; color: black;" href="{{url_for('View.Prediction')}}"><span class="dot"><i style="margin-left: 30%; margin-top: 14.8%;" class="fa fa-angle-right fa-2x"></i></span></a>
-            </div>
-            <img src="https://cdn-icons-png.flaticon.com/512/5464/5464690.png" height="253px" width="230px">
-            <div class="ServiceDetails  Service-4">
-                <h1>Model Prediction</h1>
-            </div>
-        </div>
+        <a href="{{url_for('View.About')}}" class="btn-primary" style="margin-top:24px;">
+          <i class="fa fa-arrow-right"></i> Read Full Story
+        </a>
+      </div>
     </div>
+  </div>
 </section>
 
-
-<section>
-    <div class="Section-4">       
-        <div class="ChooseDetails reveal fade-top">
-            <h1>WHY CHOOSE US</h1>
-            <img src="https://static.vecteezy.com/system/resources/previews/011/318/893/original/green-leaf-branch-watercolor-free-png.png" height="100px" width="85px">
-            <p>In Pakistan, the peak fire season usually begins in late January and lasts around 22 weeks. The following 
-               statistics from recent years forest fires in Pakistan, including regions with the most fire alerts, 
-               explain why we need Fire Eye for forest protection in Pakistan.
-            </p>
-        </div>
+<!-- ══ SERVICES ══ -->
+<section class="services-section" id="section3">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <div class="section-label">What We Offer</div>
+      <h2 class="section-title">Services &amp; <span class="text-gradient">Features</span></h2>
+      <p class="section-desc">Comprehensive AI&#8209;powered forest fire monitoring, detection, and predictive analytics tools</p>
     </div>
+    <div class="services-grid">
+
+      <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="service-icon-wrap" style="--ic:#22c55e"><i class="fa fa-video"></i></div>
+        <h3>Live Monitoring</h3>
+        <p>Real-time CCTV surveillance with YOLOv5-powered fire and smoke detection and instant alarm triggers.</p>
+        <a href="{{url_for('View.LiveMonitor')}}" class="service-link">Explore <i class="fa fa-arrow-right"></i></a>
+      </div>
+
+      <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="service-icon-wrap" style="--ic:#10b981"><i class="fa fa-triangle-exclamation"></i></div>
+        <h3>Fire Alert Reports</h3>
+        <p>Automated detection logs with timestamps and captured imagery, stored for analysis and response.</p>
+        <a href="{{url_for('View.FireAlerts')}}" class="service-link">Explore <i class="fa fa-arrow-right"></i></a>
+      </div>
+
+      <div class="service-card featured" data-aos="fade-up" data-aos-delay="300">
+        <div class="service-icon-wrap" style="--ic:#047857"><i class="fa fa-image"></i></div>
+        <h3>Image Prediction</h3>
+        <p>Upload any image and instantly classify it as Fire, Smoke, or Non-Fire using InceptionV3.</p>
+        <a href="{{url_for('View.Prediction')}}" class="service-link">Explore <i class="fa fa-arrow-right"></i></a>
+      </div>
+
+      <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+        <div class="service-icon-wrap" style="--ic:#065f46"><i class="fa fa-chart-line"></i></div>
+        <h3>Wildfire Forecast</h3>
+        <p>Prophet time-series forecasting on MODIS satellite data for predictive fire risk analysis.</p>
+        <a href="{{url_for('View.WildfirePrediction')}}" class="service-link">Explore <i class="fa fa-arrow-right"></i></a>
+      </div>
+
+    </div>
+  </div>
 </section>
 
-<section>
-    <div class="Section-5">  
-        
-        <div class="Statistic-Title">
-            <h1>HISTORICAL FIRE ALERTS IN PAKISTAN</h1>
+<!-- ══ WHY CHOOSE US + STATS ══ -->
+<section class="why-section">
+  <div class="container">
+    <div class="why-grid">
+      <div class="why-content" data-aos="fade-right">
+        <div class="section-label">Why VanSuraksha</div>
+        <h2 class="section-title">Fighting Fire with <span class="text-gradient">Intelligence</span></h2>
+        <p class="about-text">
+          India's peak fire season runs from February to June. Our system provides the fastest possible detection and response, protecting critical forest ecosystems and biodiversity.
+        </p>
+        <div class="why-list">
+          <div class="why-item" data-aos="fade-right" data-aos-delay="100">
+            <div class="why-num">01</div>
+            <div>
+              <strong>Real-Time Detection</strong>
+              <span>Sub-second fire alerts from live CCTV and satellite analysis</span>
+            </div>
+          </div>
+          <div class="why-item" data-aos="fade-right" data-aos-delay="200">
+            <div class="why-num">02</div>
+            <div>
+              <strong>Multi-Source Fusion</strong>
+              <span>Combines CCTV feed, MODIS satellite, and deep learning models</span>
+            </div>
+          </div>
+          <div class="why-item" data-aos="fade-right" data-aos-delay="300">
+            <div class="why-num">03</div>
+            <div>
+              <strong>Predictive Analytics</strong>
+              <span>Forecast future fire risk regions before incidents occur</span>
+            </div>
+          </div>
         </div>
-        <div class="Statistic reveal fade-top">
-            <div class="counter-count">
-                <span class="count count-number">15,207</span>
-                <h1>Jan 2022 - Dec 2022</h1>
-            </div>
-            <div class="counter-count">
-                <span class="count count-number">10,191</span>
-                <h1>Jan 2021 - Jan 2022</h1>
-            </div>
-            <div class="counter-count">
-                <span class="count count-number">12,156</span>
-                <h1>Jan 2020 - Jan 2021</h1>
-            </div>
-            <div class="counter-count">
-                <span class="count count-number">13,278</span>
-                <h1>Jan 2019 - Jan 2020</h1>
-            </div>
+      </div>
+      <div class="why-stats-grid" data-aos="fade-left">
+        <div class="stat-card" data-aos="zoom-in" data-aos-delay="100">
+          <div class="stat-icon"><i class="fa fa-fire"></i></div>
+          <span class="stat-num count count-number">36574</span>
+          <span class="stat-unit">fire alerts</span>
+          <p>Jan – Dec 2024</p>
         </div>
-
-        <div class="Statistic-Title2">
-            <h1>TREE COVER LOSS DUE TO FIRE IN PAKISTAN</h1>
+        <div class="stat-card accent" data-aos="zoom-in" data-aos-delay="200">
+          <div class="stat-icon"><i class="fa fa-fire"></i></div>
+          <span class="stat-num count count-number">42318</span>
+          <span class="stat-unit">fire alerts</span>
+          <p>Jan – Dec 2023</p>
         </div>
-        <div class="Statistic-Para reveal fade-left">
-            <p>Pakistan has <b>4.2 million ha</b> of forest and planted trees, which equates to <b>4.8 percent</b> of the total land area.
-               <b>From 2001 to 2021</b>, Pakistan lost <b>5.46kha</b> of tree cover from fires and <b>4.29kha</b> from all other causes of loss. 
-               The year with the most tree cover loss due to fires was 2006 with <b>853ha</b> lost to fires — <b>63%</b> of all tree cover loss 
-               for that year. Among regions of Pakistan, <b>F.A.T.A.</b> had the highest rate of tree cover loss due to fires with an average of 
-               <b>189ha</b> lost per year between 2001 to 2021 year period.</p>
+        <div class="stat-card" data-aos="zoom-in" data-aos-delay="300">
+          <div class="stat-icon"><i class="fa fa-fire"></i></div>
+          <span class="stat-num count count-number">38901</span>
+          <span class="stat-unit">fire alerts</span>
+          <p>Jan – Dec 2022</p>
         </div>
-
-        <div class="Statistic2 reveal fade-right" >
-            <div class="counter-count2">
-                <span class="count count-number">189</span>
-                <i style="position: absolute; color: white; margin-left: 19.5%; margin-top: 23%; font-size: larger;">ha</i>
-                <h1 style="margin-left: 25px;">F.A.T.A</h1>
-            </div>
-            <div class="counter-count2">
-                <span class="count count-number">79</span>
-                <i style="position: absolute; color: white; margin-left: 19.5%; margin-top: 23%; font-size: larger;">ha</i>
-                <h1 style="margin-left: 25px;">N.W.F.P</h1>
-            </div>
-            <div class="counter-count2">
-                <span class="count count-number">6</span>
-                <i style="position: absolute; color: white; margin-left: 19.5%; margin-top: 23%; font-size: larger;">ha</i>
-                <h1 style="width: 190px;">Azad Kashmir</h1>
-            </div>
-            <div class="counter-count2">
-                <span class="count count-number">5</span>
-                <i style="position: absolute; color: white; margin-left: 19.5%; margin-top: 23%; font-size: larger;">ha</i>
-                <h1 style="width: 190px;">Northern Area</h1>
-            </div>
+        <div class="stat-card accent" data-aos="zoom-in" data-aos-delay="400">
+          <div class="stat-icon"><i class="fa fa-fire"></i></div>
+          <span class="stat-num count count-number">45120</span>
+          <span class="stat-unit">fire alerts</span>
+          <p>Jan – Dec 2021</p>
         </div>
+      </div>
     </div>
+  </div>
 </section>
 
-<section>
-    <div class="Section-6">
-        <div class="ServicesTitle reveal fade-top" id="section6">
-            <h1 style="color: rgb(0, 58, 0);">WHAT'S GOING ON</h1>
-            <h2 style="margin-left: 33.5%;">LATEST NEWS & BLOGS</h2>
-            <img src="https://static.vecteezy.com/system/resources/previews/011/318/893/original/green-leaf-branch-watercolor-free-png.png" height="100px" width="85px">
-        </div>
-
-        <div class="News News-1 reveal fade-top">
-            <img src="https://i.dawn.com/primary/2022/06/62a5759a6e0dd.jpg" width="350px" height="280px">
-            <div class="NewsHeading  News-1">
-                <p>June 12, 2022 / By Mohammad Ashfaq</p>
-                <a href="https://www.dawn.com/news/1694391">KP wildfires damage forests, pastures over 14,440 acres in fortnight</a>
-            </div>
-        </div>
-
-        <div class="News News-2 reveal fade-top">
-            <img src="https://i.dawn.com/primary/2022/05/6293c847aacb3.jpg" width="350px" height="280px">
-            <div class="NewsHeading  News-1">
-                <p>June 2, 2022 / By Muzhira Amin</p>
-                <a href="https://www.dawn.com/news/1692119/the-balochistan-forest-fire-engulfed-millions-of-trees-and-the-hopes-of-generations-to-come">The Balochistan forest fire engulfed millions of trees and hopes of generation to come</a>
-            </div>
-        </div>
-
-        <div class="News News-3 reveal fade-top">
-            <img src="https://imagevars.gulfnews.com/2022/06/08/WPK-220608-Margallas-1654703336284_18144012b71_large.jpg" width="345px" height="280px">
-            <div class="NewsHeading  News-1">
-                <p>June 8, 2022 / By Sana Jamal</p>
-                <a href="https://gulfnews.com/world/asia/pakistan/devastating-forest-fires-continue-to-rage-in-pakistan-amid-extreme-heatwave-1.88454394">Devastating forest fires continue to rage in Pakistan amid extreme heatwave</a>
-            </div>
-        </div>
+<!-- ══ REGIONAL STATS ══ -->
+<section class="regional-section">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <div class="section-label">Regional Data</div>
+      <h2 class="section-title">Fire Alerts by <span class="text-gradient">State</span></h2>
+      <p class="section-desc">India has 71.6 million ha of forest cover (21.7% of land). Central &amp; Northeast states face peak fire risk.</p>
     </div>
+    <div class="regional-grid">
+      <div class="region-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="region-icon"><i class="fa fa-fire-flame-curved"></i></div>
+        <div class="region-num count count-number">8420</div>
+        <p class="region-label">Odisha</p>
+        <div class="region-bar"><div class="region-bar-fill" style="width:100%"></div></div>
+        <span class="region-sub">MODIS annual alerts</span>
+      </div>
+      <div class="region-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="region-icon"><i class="fa fa-fire-flame-curved"></i></div>
+        <div class="region-num count count-number">7310</div>
+        <p class="region-label">Chhattisgarh</p>
+        <div class="region-bar"><div class="region-bar-fill" style="width:87%"></div></div>
+        <span class="region-sub">MODIS annual alerts</span>
+      </div>
+      <div class="region-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="region-icon"><i class="fa fa-fire-flame-curved"></i></div>
+        <div class="region-num count count-number">5890</div>
+        <p class="region-label">Madhya Pradesh</p>
+        <div class="region-bar"><div class="region-bar-fill" style="width:70%"></div></div>
+        <span class="region-sub">MODIS annual alerts</span>
+      </div>
+      <div class="region-card" data-aos="fade-up" data-aos-delay="400">
+        <div class="region-icon"><i class="fa fa-fire-flame-curved"></i></div>
+        <div class="region-num count count-number">3240</div>
+        <p class="region-label">Uttarakhand</p>
+        <div class="region-bar"><div class="region-bar-fill" style="width:38%"></div></div>
+        <span class="region-sub">MODIS annual alerts</span>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section>
-    <div class="Section-7">
-        <div class="ServicesTitle reveal fade-top">
-            <h1>PROTECTING FORESTS</h1>
-            <h2 style="margin-left: 20%;">HOW FIRE EYE HELPS FIGHT FOREST FIRES</h2>
-            <img src="https://static.vecteezy.com/system/resources/previews/011/318/893/original/green-leaf-branch-watercolor-free-png.png" height="100px" width="85px">
-        </div>
-        <div class="Video">
-            <div class="scale-video">
-                <iframe src="/static/FIRE_EYE_DOCUMENTORY.mp4" sandbox="" frameborder="0"  allowfullscreen></iframe>
-            </div>
-        </div>
+<!-- ══ CTA BAND ══ -->
+<section class="cta-band">
+  <div class="container">
+    <div class="cta-inner" data-aos="zoom-in">
+      <div>
+        <h2>Ready to Monitor Forests in Real-Time?</h2>
+        <p>Start watching live feeds, explore MODIS forecasts, and review AI-generated fire alerts.</p>
+      </div>
+      <div class="cta-buttons">
+        <a href="{{url_for('View.LiveMonitor')}}" class="btn-primary"><i class="fa fa-eye"></i> Open Live Monitor</a>
+        <a href="{{url_for('View.WildfirePrediction')}}" class="btn-outline"><i class="fa fa-chart-line"></i> Wildfire Forecast</a>
+      </div>
     </div>
+  </div>
 </section>
 
-<section>
-    <div class="Section-8" id="section8">
-        <img src="/static/toppng.com-forest-png-image-forest-clip-art-black-and-white-2334x761.png" width="100%" height="320px">
-        <div class="overlay">
-            <div class="Column Column-1">
-                <h1 class="footer-h1">FIRE EYE</h1>
-                <p>
-                   System that will analyze the scope of artificial intelligence for early 
-                   detection of fire and sending alerts with images and videos from 
-                   CCTV footage. 
-                </p>
-            </div>
-
-            <div class="Column Column-2">
-                <h1 class="footer-h1">EXPLORE</h1>
-                <p><a href="{{url_for('View.Home')}}">Home</a></p>
-                <p><a href="{{url_for('View.About')}}">About</a></p>
-                <p><a href="{{url_for('.Home', _anchor='section3')}}">Services</a></p>
-                <p><a href="{{url_for('.Home', _anchor='section6')}}">News</a></p>
-            </div>
-
-            <div class="Column Column-3">
-                <h1 class="footer-h1">CONTACT</h1>
-                <p><i class="fa fa-home"></i>&nbspRawalpindi, Punjab, Pakistan</p>
-                <p class="Column-2"><i class="fa fa-envelope-square"></i><a  href="{{url_for('.Home', _anchor='section6')}}">&nbsp&nbspfypforestfire@gmail.com</a></p>
-                <p><i class="fa fa-phone"></i>&nbsp&nbsp0345-7865345</p>
-            </div>
-            <div class="Column Column-4">
-                <h1 class="footer-h1">FOLLOW US</h1>
-                <p style="display: inline-block;"><a style="background-color: #3b5998; padding-left: 17.5px; padding-right: 17.5px;" href="https://www.facebook.com/" role="button"><i class="fa-brands fa-facebook-f"></i></a></p>
-                <p style="display: inline-block;"><a style="background-color: #55acee" href="https://twitter.com/" role="button"><i class="fa-brands fa-twitter"></i></a></p>
-                <p style="display: inline-block;"><a style="background-color: #dd4b39" href="{{url_for('View.Home')}}" role="button"><i class="fa-brands fa-google"></i></a></p><br>
-                <p style="display: inline-block;"><a style="background-color: #ac2bac" href="https://www.instagram.com/?hl=en" role="button"><i class="fa-brands fa-instagram"></i></a></p>
-                <p style="display: inline-block;"><a style="background-color: #0082ca; padding-left: 16px; padding-right: 16px;" href="https://www.linkedin.com/" role="button"><i class="fa-brands fa-linkedin"></i></a></p>
-                <p style="display: inline-block;"><a style="background-color: #333333" href="https://github.com/" role="button"><i class="fa-brands fa-github"></i></a></p>
-            </div>
+<!-- ══ FOOTER ══ -->
+<footer class="vs-footer">
+  <div class="container">
+    <div class="vs-footer-grid">
+      <div class="vs-footer-brand">
+        <div class="nav-brand" style="display:flex;align-items:center;gap:10px;">
+          <div class="nav-logo-ring" style="width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;color:#fff;font-size:.9rem;"><i class="fa fa-tree"></i></div>
+          <span class="nav-title" style="-webkit-text-fill-color:#fff!important;font-size:1.3rem;font-weight:800;">VanSuraksha</span>
         </div>
+        <p>AI-powered forest fire detection and monitoring system protecting India's 71 million hectares of forest cover through deep learning and satellite intelligence.</p>
+      </div>
+      <div class="vs-footer-links">
+        <h4>Explore</h4>
+        <a href="{{url_for('View.Home')}}">Home</a>
+        <a href="{{url_for('View.About')}}">About</a>
+        <a href="#section3">Services</a>
+      </div>
+      <div class="vs-footer-links">
+        <h4>Services</h4>
+        <a href="{{url_for('View.LiveMonitor')}}">Live Monitor</a>
+        <a href="{{url_for('View.FireAlerts')}}">Fire Alerts</a>
+        <a href="{{url_for('View.WildfirePrediction')}}">Wildfire Forecast</a>
+        <a href="{{url_for('View.Prediction')}}">AI Prediction</a>
+      </div>
+      <div class="vs-footer-info">
+        <h4>Technology Stack</h4>
+        <p>Built with YOLOv5 object detection, InceptionV3 image classification, Prophet time-series forecasting over MODIS satellite data, and Flask as the web framework.</p>
+      </div>
     </div>
-</section>
+    <div class="vs-footer-bottom">
+      <span>&copy; 2026 VanSuraksha &mdash; Protecting India&apos;s Forests with Artificial Intelligence</span>
+    </div>
+  </div>
+</footer>
 
+<!-- ══ SCRIPTS ══ -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://unpkg.com/jquery.counterup@2.1.0/jquery.counterup.js"></script>
+<script>
+// AOS
+AOS.init({ duration: 800, once: true, easing: 'ease-out-cubic', offset: 60 });
 
+// Sticky nav
+const navbar = document.getElementById('vs-navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 60);
+});
+
+// Mobile menu
+document.getElementById('nav-toggle').addEventListener('click', function() {
+  this.classList.toggle('active');
+  document.getElementById('nav-mobile').classList.toggle('open');
+});
+
+// Smooth anchor scrolling while keeping navbar offset
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      window.scrollTo({ top: target.offsetTop - 72, behavior: 'smooth' });
+    }
+  });
+});
+
+// Counter animation
+$('.count-number').counterUp({ delay: 10, time: 2000 });
+
+// Particle canvas
+(function () {
+  const canvas = document.getElementById('particles-canvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let w, h, particles = [];
+  function resize() { w = canvas.width = window.innerWidth; h = canvas.height = window.innerHeight; }
+  resize(); window.addEventListener('resize', resize);
+  function Particle() {
+    this.reset();
+  }
+  Particle.prototype.reset = function () {
+    this.x = Math.random() * w;
+    this.y = Math.random() * h;
+    this.r = Math.random() * 2.2 + 0.4;
+    this.vx = (Math.random() - 0.5) * 0.35;
+    this.vy = -(Math.random() * 0.55 + 0.15);
+    this.alpha = Math.random() * 0.55 + 0.15;
+  };
+  Particle.prototype.update = function () {
+    this.x += this.vx; this.y += this.vy;
+    if (this.y < -4) this.reset(), this.y = h + 4;
+  };
+  Particle.prototype.draw = function () {
+    ctx.beginPath(); ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(74,222,128,${this.alpha})`; ctx.fill();
+  };
+  for (let i = 0; i < 90; i++) particles.push(new Particle());
+  (function loop() {
+    ctx.clearRect(0, 0, w, h);
+    particles.forEach(p => { p.update(); p.draw(); });
+    requestAnimationFrame(loop);
+  })();
+})();
+</script>
 </body>
 </html>
 
-<script>
-function reveal() {
-  var reveals = document.querySelectorAll(".reveal");
 
-  for (var i = 0; i < reveals.length; i++) {
-    var windowHeight = window.innerHeight;
-    var elementTop = reveals[i].getBoundingClientRect().top;
-    var elementVisible = 50;
-
-    if (elementTop < windowHeight - elementVisible) {
-      reveals[i].classList.add("active");
-    } 
-  }
-}
-
-window.addEventListener("scroll", reveal);
-</script>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js" integrity="sha512-CEiA+78TpP9KAIPzqBvxUv8hy41jyI3f2uHi7DGp/Y/Ka973qgSdybNegWFciqh6GrN2UePx2KkflnQUbUhNIA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="https://unpkg.com/jquery.counterup@2.1.0/jquery.counterup.js"></script>
-<script>
-    $('.count-number').counterUp({
-        delay: 10,
-        time: 10000
-    });
-</script>
 

@@ -1,0 +1,56 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Logs and runtime
+*.log
+*.tmp
+*.bak
+
+# Build artifacts
+dist/
+build/
+*.egg-info/
+
+# Local database and generated runtime data
+instance/*.db
+instance/*.sqlite
+instance/*.sqlite3
+
+# Model training artifacts and caches
+runs/
+wandb/
+datasets/train_runs/
+datasets/fire_smoke_merged_fast/
+datasets/auto_positives/
+datasets/camera_negatives/
+
+# Generated media/output data
+static/uploads/*
+static/shots/*
+static/video/*
+!static/uploads/.gitkeep
+!static/shots/.gitkeep
+!static/video/.gitkeep
+
+# Large model checkpoints and backups
+Models/*.pt
+!Models/yolocff.pt
+Models/yolocff_backup_*.pt
